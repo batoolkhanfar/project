@@ -1,0 +1,74 @@
+# Description: This is a chatbot program
+#import the library
+from nltk.chat.util import Chat, reflections
+#Pairs is a list of patterns and responses.
+pairs = [
+ [
+        r"(hi|hey|hello|hola|holla)(.*)",
+        ["Hello", "Hey there,what is your name?",]
+    ],
+    [
+        r"(.*)my name is (.*)",
+        ["Hello %2, How are you today ?",]
+    ],
+   
+     [
+        r"(.*) your name ?",
+        ["My name is Robount and I'm a chatbot .",]
+    ],
+    [
+        r"how are you (.*) ?",
+        ["I'm doing very well", "i am great !"]
+    ],
+    [
+        r"sorry (.*)",
+        ["Its alright","Its OK, never mind that",]
+    ],
+    [
+        r"i'm (.*) (good|well|okay|ok)",
+        ["Nice to hear that","Alright, great !",]
+    ],
+   
+    [
+        r"what (.*) AI ?",
+        ["Artificial intelligence (AI), sometimes called machine intelligence, is intelligence demonstrated by machines, unlike the natural intelligence displayed by humans and animals.",]
+        
+    ],
+    [
+        r"(.*)created(.*)",
+        ["Batool created me using Python's NLTK library ","top secret ;)",]
+    ],
+    [
+        r"(.*) (location|live) ?",
+        ['Amman, Jordan',]
+    ],
+    
+    [
+        r"how (.*) health (.*)",
+        ["Health is very important, but I am a computer, so I don't need to worry about my health ",]
+    ],
+    [
+        r"(.*)(sports|game|sport)(.*)",
+        ["I'm a very big fan of Basketball",]
+    ],
+    [
+        r"where (.*) study ?",
+        ["BAU University"]
+    ],
+    [
+        r"bye",
+        ["Bye for now. See you soon :) ","It was nice talking to you. See you soon :)"]
+    ],
+    [
+        r"(.*)",
+        ['That is nice to hear']
+    ],
+]
+
+
+#default message at the start of chat
+print("Hi, I'm Robunt and I like to chat\nPlease type lowercase English language to start a conversation. Type bye to leave ")
+#Create Chat Bot
+chat = Chat(pairs, reflections)
+#Start conversation
+chat.converse()
